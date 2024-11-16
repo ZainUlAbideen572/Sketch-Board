@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sketch board</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+    <div class="option-cont">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="tools-cont scale-tools">
+        <img class="pencil" src="Icons/Pencil.svg"/>
+        <img class="download" src="Icons/Download.svg"/>
+        <img class="note" src="Icons/StickyNote.svg"/>
+        <img class="eraser" src="Icons/Eraser.svg"/>
+        <img class="upload" src="Icons/Upload.svg"/>
+        <img class="undo" src="Icons/undo.svg"/>
+        <img class="redo" src="Icons/Redo.svg"/>
+    </div>
+    <div class="pencil-tool-cont">
+        <div class="pencil-width-cont">
+            <input type="range" min="2" max="10" value="3" class="pencil-width">
+        </div>
+        <div class="pencil-color-cont">
+            <div class="black pencil-color"></div>
+            <div class="red pencil-color"></div>
+            <div class="blue pencil-color"></div>
+        </div>
+    </div>
+    <div class="eraser-tool-cont">
+            <input type="range" min="2" max="10" value="3" class="eraser-width-cont">
+    </div>
+    <canvas id="canvas"></canvas>
+    <script src="https://cdn.socket.io/4.8.0/socket.io.min.js" integrity="sha384-OoIbkvzsFFQAG88r+IqMAjyOtYDPGO0cqK5HF5Uosdy/zUEGySeAzytENMDynREd" crossorigin="anonymous"></script>
+    <script>
+        let socket=io.connect('http://localhost:8000')
+    </script>
+    <script src="./script.js" defer></script>
+    <script src="./tool.js" defer></script>
+    <!-- <div class="sticky-cont">
+        <div class="header-cont">
+            <div class="minimize"></div>
+            <div class="remove"></div>
+         </div>
+        <div class="note-cont">
+            <textarea name="" id="" cols="5" rows="5"></textarea>
+        </div>
+    </div> -->
+</body>
+</html>

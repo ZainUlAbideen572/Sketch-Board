@@ -1,0 +1,128 @@
+*{
+    box-sizing: border-box;
+}
+.option-cont{
+    position: absolute;
+    top: 4rem;
+    left: 12rem;
+    border-radius: 70%;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.tools-cont.scale-tools{
+    display: flex;
+    height: 5rem;
+    width: 55vw;
+    background-color: #f1f2f6;
+    justify-content: space-between;
+    position: absolute;
+    top: 2rem;
+    left: 25vw;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.scale-tools{
+    animation:scale-tools 1s 
+}
+@keyframes scale-tools{
+    0%{
+        transform: scale(0.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.pencil-tool-cont{
+    position: absolute;
+    width: 9rem;
+    height: 8rem;
+    position: absolute;
+    left: 25vw;
+    top:8rem;
+    background-color: #f1f2f6;
+    display: none;
+
+
+
+}
+.pencil-color-cont{
+    width: calc(100% - 1.5rem);
+    height: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pencil-color-cont .black{
+    background-color: black;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    margin-top: 1rem;
+}
+.pencil-color-cont .red{
+    background-color: red;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 1rem;
+    border-radius: 50%;
+}
+.pencil-color-cont .blue{
+    background-color: blue;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 1rem;
+    border-radius: 50%;
+}
+.eraser-tool-cont{
+    position: absolute;
+    top: 8rem;
+    left: 50vw;
+    display: none;
+
+
+}
+.sticky-cont{
+    height: 15rem;
+    width: 15rem;
+    position: absolute;
+    top: 10rem;
+    /* left: 36rem; */
+}
+.header-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color:aliceblue;
+}
+.header-cont > * {
+    height: 1.3rem;
+    width: 1.3rem;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+   
+}
+.header-cont .minimize{
+   background-color: green;
+   border-radius: 50%;
+
+}
+.header-cont .remove{
+    background-color: red;
+    border-radius: 50%;
+ 
+ }
+
+.note-cont {
+    height: calc( 100% - 2rem );
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+textarea {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    resize: none;
+}
+.active{
+    border-color: aquamarine !important;
+}
