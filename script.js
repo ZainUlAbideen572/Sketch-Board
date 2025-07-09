@@ -3,7 +3,6 @@ const toolscont = document.querySelector('.tools-cont');
 const pencil = document.querySelector('.pencil');
 const pencilcont = document.querySelector(".pencil-tool-cont");
 const eraser = document.querySelector('.eraser')
-console.log('er',eraser)
 const stickynote = document.querySelector('.note');
 const eraserCont = document.querySelector(".eraser-tool-cont");
 const upload = document.querySelector('.upload');
@@ -13,7 +12,6 @@ const optionChild = optionscont.children[0];
 let pencilflag = false;
 let optionFlag = true;
 let eraserFlag = false;
-console.log(eraserCont.style.display)
 function openTools() {
   optionChild.classList.add('fa-bars');
   optionChild.classList.remove('fa-times');
@@ -31,12 +29,15 @@ function closeTools() {
 }
 
 pencil.addEventListener('click', function () {
+    console.log('click')
     pencilflag = !pencilflag
     pencilcont.style.display = pencilflag ? 'block' : 'none';
 });
 
 eraser.addEventListener('click', function () {
     eraserFlag = !eraserFlag;
+   pencilflag = !!pencilflag;
+
     eraserCont.style.display = eraserFlag ? 'flex' : 'none';
     
 });
@@ -145,5 +146,10 @@ download.addEventListener('click',(e)=>{
     img.href=url
     img.download='board.jpeg'
     img.click()
-    console.log('clicked')
+})
+document.addEventListener('click',function(){
+    // pencilflag=!pencilflag
+    // eraserflag=false
+    // optionFlag=false
+    
 })

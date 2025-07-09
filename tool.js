@@ -1,6 +1,7 @@
 const canvas = document.querySelector('canvas');
 const pencilwdith = document.querySelector('.pencil-width');
 const pencilcolor = document.querySelectorAll('.pencil-color');
+
 const eraserwidth = document.querySelector('.eraser-width-cont');
 const undo = document.querySelector('.undo');
 const redo = document.querySelector('.redo');
@@ -20,7 +21,6 @@ pencilwdith.addEventListener('change', (e) => {
 });
 
 canvas.addEventListener('mousedown', (e) => {
-    console.log(mousedown);
     mousedown = true;
     let data = {
         x: e.clientX,
@@ -28,7 +28,8 @@ canvas.addEventListener('mousedown', (e) => {
     };
 
     if (mousedown) {
-        beginPath(data); // Call beginPath directly
+        beginPath(data);
+         // Call beginPath directly
     }
 });
 
@@ -100,8 +101,12 @@ function undoRedoActions(data) {
 
 pencilcolor.forEach((elem) => {
     elem.addEventListener('click', () => {
-        currentColor = elem.classList[0]; // Assuming the class name represents the color
+        currentColor = elem.classList[0];
+
+// Assuming the class name represents the color
         ctx.strokeStyle = currentColor;
+        pencilcolor.forEach((el) => el.classList.remove('active'));
+        elem.classList.add('active');
     });
 });
 

@@ -9,6 +9,11 @@
     font-size: 2rem;
     cursor: pointer;
 }
+.pencil-color-cont .active {
+    border: 2px solid #2e5dae;
+    box-shadow: 0 0 10px #1e3a8a; 
+    border-radius: 12px;
+}
 .tools-cont.scale-tools{
     display: flex;
     height: 5rem;
